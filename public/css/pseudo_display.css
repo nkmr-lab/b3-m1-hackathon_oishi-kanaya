@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffaf0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px; /* 最大幅を設定して中央寄せ */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h2, h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* 項目を縦並びに */
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #1E90FF;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1C86EE;
+}
+
+.product-list {
+    margin-top: 30px;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.product-card img {
+    display: block;
+    margin: 10px auto 0;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.success {
+    color: green;
+    margin: 10px 0;
+}
+
+.error {
+    color: red;
+    margin: 10px 0;
+}
+
+.back-btn {
+    color: #1E90FF;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    color: #104E8B;
+}
