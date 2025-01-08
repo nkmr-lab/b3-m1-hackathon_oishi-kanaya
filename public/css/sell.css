@@ -1,0 +1,120 @@
+/* css/sell.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffaf0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.sell-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #1E90FF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1C86EE;
+}
+
+.back-btn {
+    margin-top: 30px;
+    color: #1E90FF;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+    color: #104E8B;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 600px) {
+    .btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .back-btn {
+        font-size: 14px;
+    }
+}
+
+.price-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.price-form label {
+    font-weight: bold;
+}
+
+.price-form input,
+.price-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.price-form button {
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.price-form button:hover {
+    background-color: #1C86EE;
+}
+
+.price-suggestion {
+    text-align: center;
+    padding: 20px;
+    background-color: #e7f3fe;
+    border: 1px solid #b3d7ff;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.price-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
