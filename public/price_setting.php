@@ -31,7 +31,6 @@ loadEnv(__DIR__ . "/api.env");
 
 // 環境変数を参照
 $openai_api_key = getenv("API_Key");
-echo "Your API Key is: $openai_api_key";
 
 
 // OpenAI APIキーを設定
