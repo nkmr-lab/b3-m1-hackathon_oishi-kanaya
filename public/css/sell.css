@@ -1,5 +1,3 @@
-/* css/sell.css */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #fffaf0;
@@ -11,9 +9,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start;
+    min-height: 100vh;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -30,73 +29,108 @@ h2 {
     max-width: 300px;
 }
 
+button,
 .btn {
     display: block;
     width: 100%;
+    max-width: 300px;
     padding: 15px;
     background-color: #1E90FF;
     color: white;
     text-align: center;
     text-decoration: none;
     font-size: 18px;
+    border: none;
     border-radius: 8px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #1C86EE;
-}
-
+.history-link,
 .back-btn {
-    margin-top: 30px;
-    color: #1E90FF;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
+    display: block; /* リンクをブロック要素にして縦並びに */
+    text-align: center; /* リンクのテキストを中央揃えに */
+    margin: 10px 0; /* 上下の間隔を設定 */
+    padding: 10px 20px; /* リンク内の余白を設定 */
+    background-color: #f0f0f0; /* 背景色 */
+    color: #333; /* 文字色 */
+    text-decoration: none; /* 下線を削除 */
+    border: 1px solid #ccc; /* ボーダーを追加 */
+    border-radius: 5px; /* 角を丸くする */
+    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
 }
 
+.history-link:hover,
 .back-btn:hover {
-    color: #104E8B;
-}
-
-/* レスポンシブデザイン */
-@media (max-width: 600px) {
-    .btn {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    .back-btn {
-        font-size: 14px;
-    }
+    background-color: #e0e0e0; /* ホバー時の背景色 */
+    color: #000; /* ホバー時の文字色 */
 }
 
 .price-form {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column; /* 縦に並べる */
+    gap: 15px; /* 各項目間の余白 */
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.price-form label {
+label {
+    width: 150px; /* ラベルの固定幅を設定 */
     font-weight: bold;
+    text-align: right; /* ラベルを右揃え */
+    margin-right: 10px; /* ラベルと入力欄の間隔 */
+    display: inline-block; /* ラベルをブロック要素のように扱う */
 }
 
-.price-form input,
-.price-form select {
+.form-group {
+    display: flex; /* ラベルと入力フィールドを横並びに */
+    align-items: center; /* ラベルと入力フィールドを上下中央揃え */
+    margin-bottom: 15px; /* 各項目間の余白を設定 */
+}
+
+input, select, textarea {
+    flex: 1; /* 入力欄をラベルの幅に応じて伸縮させる */
     padding: 10px;
+    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.price-form button {
-    background-color: #1E90FF;
-    color: white;
-    border: none;
-    cursor: pointer;
+textarea {
+    resize: vertical; /* テキストエリアを縦方向のみリサイズ可能にする */
 }
 
-.price-form button:hover {
+
+
+button {
+    display: block; /* ボタンをブロック要素として扱う */
+    margin: 0 auto; /* 左右のマージンを自動で設定し、中央に揃える */
+    padding: 10px 20px; /* ボタンの内側の余白 */
+    background-color: #1E90FF;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
     background-color: #1C86EE;
+}
+
+
+
+.error {
+    color: white;
+    background-color: #FF6F6F;
+    border: 1px solid #FF4C4C;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .price-suggestion {
@@ -105,16 +139,22 @@ h2 {
     background-color: #e7f3fe;
     border: 1px solid #b3d7ff;
     border-radius: 5px;
+    margin-top: 20px;
 }
 
-.error {
-    color: red;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.price-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: vertical;
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .price-form button,
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
