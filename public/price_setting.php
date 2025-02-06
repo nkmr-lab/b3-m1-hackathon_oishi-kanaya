@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 
     // 画像のアップロード処理
     if (isset($_FILES['productImage']) && $_FILES['productImage']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'uploads/';
+        $uploadDir = 'uploads/suggestPrice';
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
@@ -201,6 +201,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                 </div>
                 <button type="submit" name="submit">価格を提案してもらう</button>
                 <a href="saved_results.php" class="back-btn">保存履歴を見る</a>
+                <a href="sell.html" class="back-btn">出品メニューに戻る</a>
             </form>
 
         <?php endif; ?>

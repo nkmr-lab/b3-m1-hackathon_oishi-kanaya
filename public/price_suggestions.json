@@ -53,5 +53,112 @@
         "suggestedPrice": "2500",
         "suggestionMessage": "2500円",
         "imagePath": "uploads\/img_678daa9d0023f0.35535950.jpeg"
+    },
+    {
+        "date": "2025-02-06 04:34:15",
+        "productType": "existing",
+        "productCondition": "new",
+        "usageCount": "3",
+        "originalPrice": "30",
+        "productDescription": "穴だらけ",
+        "suggestedPrice": "15",
+        "suggestionMessage": "15円",
+        "imagePath": "uploads\/img_67a43bc70d9f13.43087178.jpeg"
+    },
+    {
+        "date": "2025-02-06 07:41:21",
+        "searchResultsCharacter": "キン肉マン",
+        "searchResultsSourceName": "キン肉マンシリーズ",
+        "guessPrice": "5000"
+    },
+    {
+        "date": "2025-02-06 07:47:32",
+        "searchResultsCharacter": "ドラえもん",
+        "searchResultsSourceName": "ドラえもん",
+        "guessPrice": "000"
+    },
+    {
+        "date": "2025-02-06 07:48:28",
+        "searchResultsCharacter": "ドラえもん",
+        "searchResultsSourceName": "『ドラえもん』",
+        "guessPrice": "3000"
+    },
+    {
+        "date": "2025-02-06 07:48:38",
+        "searchResultsCharacter": "ドラえもん",
+        "searchResultsSourceName": "ドラえもん",
+        "guessPrice": "000"
+    },
+    {
+        "date": "2025-02-06 07:49:20",
+        "searchResultsCharacter": "わかりません",
+        "searchResultsSourceName": "わかりません",
+        "guessPrice": "3500"
+    },
+    {
+        "date": "2025-02-06 07:51:37",
+        "searchResultsCharacter": "不明",
+        "searchResultsSourceName": "不明",
+        "guessPrice": "3000"
+    },
+    {
+        "date": "2025-02-06 07:53:29",
+        "searchResultsCharacter": "ドラえもん,出典名:ドラえもん,推定価格:10000円",
+        "searchResultsSourceName": "ドラえもん,推定価格:10000円",
+        "guessPrice": "10000"
+    },
+    {
+        "date": "2025-02-06 07:54:33",
+        "searchResultsCharacter": "ドラえもん,出典名:ドラえもん,推定価格:8000円",
+        "searchResultsSourceName": "ドラえもん,推定価格:8000円",
+        "guessPrice": "8000"
+    },
+    {
+        "date": "2025-02-06 07:55:06",
+        "searchResultsCharacter": "ドラえもん",
+        "searchResultsSourceName": "ドラえもん",
+        "guessPrice": "5000"
+    },
+    {
+        "date": "2025-02-06 07:57:11",
+        "searchResultsCharacter": "バンギラス　出典名：ポケットモンスター　推定価格：2000円",
+        "searchResultsSourceName": "ポケットモンスター　推定価格：2000円",
+        "guessPrice": "2000"
+    },
+    {
+        "date": "2025-02-06 07:59:38",
+        "searchResultsCharacter": "不明",
+        "searchResultsSourceName": "不明",
+        "guessPrice": "2000"
+    },
+    {
+        "date": "2025-02-06 08:01:07",
+        "searchResultsCharacter": "不明",
+        "searchResultsSourceName": "不明",
+        "guessPrice": "2000"
+    },
+    {
+        "date": "2025-02-06 08:02:07",
+        "searchResultsCharacter": "不明",
+        "searchResultsSourceName": "不明",
+        "guessPrice": "3000"
+    },
+    {
+        "date": "2025-02-06 08:03:30",
+        "searchResultsCharacter": "バンギラス,出典名:ポケットモンスター,推定価格:2000円",
+        "searchResultsSourceName": "ポケットモンスター,推定価格:2000円",
+        "guessPrice": "2000"
+    },
+    {
+        "date": "2025-02-06 08:03:57",
+        "searchResultsCharacter": "バンギラス,出典名:ポケットモンスター,推定価格:2000円",
+        "searchResultsSourceName": "ポケットモンスター,推定価格:2000円",
+        "guessPrice": "2000"
+    },
+    {
+        "date": "2025-02-06 08:06:32",
+        "searchResultsCharacter": "バンギラス",
+        "searchResultsSourceName": "ポケットモンスター",
+        "guessPrice": "1,500"
     }
 ]
