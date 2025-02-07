@@ -1,0 +1,22 @@
+[
+    {
+        "date": "2025-02-07 16:53:53",
+        "productType": "既存商品",
+        "productCondition": "中古",
+        "usageCount": "50",
+        "originalPrice": "15000",
+        "productDescription": "シミあり",
+        "suggestedPrice": "4000",
+        "imagePath": "uploads\/suggestPrice\/img_67a5bc0d984078.07130514.jpeg"
+    },
+    {
+        "date": "2025-02-07 16:53:58",
+        "productType": "既存商品",
+        "productCondition": "中古",
+        "usageCount": "50",
+        "originalPrice": "15000",
+        "productDescription": "シミあり",
+        "suggestedPrice": "3000",
+        "imagePath": "uploads\/suggestPrice\/img_67a5bc11065d64.66833177.jpeg"
+    }
+]
