@@ -1,13 +1,10 @@
 <?php
-require_once 'save_suggestion.php';
+require_once 'save_search.php';
 
 // エラーレポートを有効にする（開発時のみ）
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-// .envを読み込む
-loadEnv(__DIR__ . "/api.env");
 
 // 環境変数を参照
 $openai_api_key = getenv("API_Key");
@@ -164,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                 'guessPrice' => $guessPrice
             ];
 
-            savePriceSuggestion($searchResultsData);
+            saveSearchResults($searchResultsData);
         } else {
             $error = $result['error'];
         }
@@ -189,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
         <h2>画像検索</h2>
 
         <?php if ($error): ?>
-            <div class="error"><?php echo nl2br(htmlspecialchars($error)); ?></div>
+            <div class="error"><?php //echo nl2br(htmlspecialchars($error)); ?></div>
         <?php endif; ?>
 
         <?php if ($result): ?>
@@ -197,11 +194,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                 <h3>キャラクター名: <?php echo htmlspecialchars($searchResultsCharacter); ?></h3>
                 <h3>出典名: <?php echo htmlspecialchars($searchResultsSourceName); ?></h3>
                 <h3>推定価格: <?php echo htmlspecialchars($guessPrice); ?> 円</h3>
-                <p><?php echo nl2br(htmlspecialchars($message)); ?></p>
-                <div class="link-container">
-                    <a href="saved_results.php" class="history-link">保存履歴を見る</a>
-                    <a href="sell.html" class="back-btn">出品メニューに戻る</a>
-                </div>  
+                <p><?php //echo nl2br(htmlspecialchars($message)); ?></p>
+                
 
             </div>
         <?php else: ?>
@@ -217,8 +211,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                     </select>
                 </div>
                 <button type="submit" name="submit">画像を検索する</button>
-                <a href="saved_results.php" class="back-btn">保存履歴を見る</a>
-                <a href="sell.html" class="back-btn">出品メニューに戻る</a>
+                <div class="link-container">
+                    <a href="saved_searchResults.php" class="history-link">検索履歴を見る</a>
+                    <a href="start.html" class="back-btn">ホームに戻る</a>
+                </div>
             </form>
 
         <?php endif; ?>

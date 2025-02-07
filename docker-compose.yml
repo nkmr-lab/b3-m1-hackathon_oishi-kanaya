@@ -7,5 +7,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80" # ホストの8080をコンテナの80にマッピング
+    env_file:
+      - api.env
     volumes:
       - ./public:/var/www/html # ローカルのpublicディレクトリをコンテナ内にマウント

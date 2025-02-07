@@ -6,9 +6,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// .envを読み込む
-loadEnv(__DIR__ . "/api.env");
-
 // 環境変数を参照
 $openai_api_key = getenv("API_Key");
 
@@ -161,7 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                 <h3>推奨販売価格: <?php echo htmlspecialchars($suggestedPrice); ?> 円</h3>
                 <p><?php echo nl2br(htmlspecialchars($suggestionMessage)); ?></p>
                 <div class="link-container">
-                    <a href="saved_results.php" class="history-link">保存履歴を見る</a>
+                    <a href="saved_suggestionResults.php" class="history-link">保存履歴を見る</a>
                     <a href="sell.html" class="back-btn">出品メニューに戻る</a>
                 </div>  
 
@@ -200,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                     <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
                 </div>
                 <button type="submit" name="submit">価格を提案してもらう</button>
-                <a href="saved_results.php" class="back-btn">保存履歴を見る</a>
+                <a href="saved_suggestionResults.php" class="back-btn">保存履歴を見る</a>
                 <a href="sell.html" class="back-btn">出品メニューに戻る</a>
             </form>
 

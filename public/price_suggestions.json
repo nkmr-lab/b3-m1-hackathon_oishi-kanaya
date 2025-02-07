@@ -160,5 +160,58 @@
         "searchResultsCharacter": "バンギラス",
         "searchResultsSourceName": "ポケットモンスター",
         "guessPrice": "1,500"
+    },
+    {
+        "date": "2025-02-07 04:26:12",
+        "searchResultsCharacter": "バンギラス",
+        "searchResultsSourceName": "ポケットモンスター",
+        "guessPrice": "2,000"
+    },
+    {
+        "date": "2025-02-07 04:26:43",
+        "searchResultsCharacter": "バンギラス",
+        "searchResultsSourceName": "ポケモン",
+        "guessPrice": "2,000"
+    },
+    {
+        "date": "2025-02-07 04:29:44",
+        "searchResultsCharacter": "バンギラス",
+        "searchResultsSourceName": "ポケットモンスター",
+        "guessPrice": "2,000"
+    },
+    {
+        "date": "2025-02-07 04:29:50",
+        "searchResultsCharacter": "バンギラス",
+        "searchResultsSourceName": "ポケットモンスター",
+        "guessPrice": "2,000"
+    },
+    {
+        "date": "2025-02-07 04:30:13",
+        "searchResultsCharacter": "バンギラス",
+        "searchResultsSourceName": "ポケットモンスター",
+        "guessPrice": "2,000"
+    },
+    {
+        "date": "2025-02-07 04:30:57",
+        "searchResultsCharacter": "バンギラス",
+        "searchResultsSourceName": "ポケットモンスター",
+        "guessPrice": "2,000"
+    },
+    {
+        "date": "2025-02-07 04:31:10",
+        "searchResultsCharacter": "バンギラス",
+        "searchResultsSourceName": "ポケットモンスター",
+        "guessPrice": "1,500"
+    },
+    {
+        "date": "2025-02-07 05:00:52",
+        "productType": "existing",
+        "productCondition": "new",
+        "usageCount": "1",
+        "originalPrice": "1",
+        "productDescription": "1",
+        "suggestedPrice": "1",
+        "suggestionMessage": "1円",
+        "imagePath": "uploads\/suggestPriceimg_67a593839424a2.60169897.jpeg"
     }
 ]
