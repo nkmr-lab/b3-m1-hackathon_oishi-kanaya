@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 
     // 画像のアップロード処理
     if (isset($_FILES['productImage']) && $_FILES['productImage']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'uploads/suggestPrice';
+        $uploadDir = 'uploads/suggestPrice/';
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
