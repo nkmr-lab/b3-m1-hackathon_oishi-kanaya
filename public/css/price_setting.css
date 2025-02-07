@@ -1,0 +1,125 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ffe8e8, #e4ecfa);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    color: #FF6F61;
+    margin-bottom: 20px;
+}
+
+.error {
+    background-color: #FFCCCC;
+    padding: 15px;
+    border-left: 5px solid #FF4C4C;
+    color: #A94442;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.price-suggestion {
+    background: linear-gradient(135deg, #D0F0FD, #A5E1E8);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 150, 255, 0.15);
+    color: #004D61;
+}
+
+.price-suggestion h3 {
+    font-size: 26px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.link-container {
+    margin-top: 15px;
+}
+
+.history-link, .back-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF8C42, #FF6B6B);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.history-link:hover, .back-btn:hover {
+    background: linear-gradient(135deg, #FF6B6B, #FF3D3D);
+    box-shadow: 0px 4px 8px rgba(255, 107, 107, 0.5);
+}
+
+form {
+    padding: 20px;
+    background-color: #FAF3F3;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #FF8C42, #FF6B6B);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #FF6B6B, #FF3D3D);
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 10px rgba(255, 107, 107, 0.4);
+}
+
+a.back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}

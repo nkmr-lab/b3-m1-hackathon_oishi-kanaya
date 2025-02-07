@@ -28,7 +28,7 @@ $savedSuggestions = getPriceSuggestions();
                         <p><strong>元値:</strong> <?php echo htmlspecialchars($suggestion['originalPrice']); ?> 円</p>
                         <p><strong>商品説明:</strong><br><?php echo nl2br(htmlspecialchars($suggestion['productDescription'])); ?></p>
                         <p><strong>推奨価格:</strong> <?php echo htmlspecialchars($suggestion['suggestedPrice']); ?> 円</p>
-                        <p><strong>メッセージ:</strong><br><?php echo nl2br(htmlspecialchars($suggestion['suggestionMessage'])); ?></p>
+                        <!-- <p><strong>メッセージ:</strong><br><?php echo nl2br(htmlspecialchars($suggestion['suggestionMessage'])); ?></p> -->
                     </li>
                 <?php endforeach; ?>
             </ul>
