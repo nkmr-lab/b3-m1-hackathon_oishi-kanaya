@@ -213,5 +213,37 @@
         "suggestedPrice": "1",
         "suggestionMessage": "1円",
         "imagePath": "uploads\/suggestPriceimg_67a593839424a2.60169897.jpeg"
+    },
+    {
+        "date": "2025-02-07 05:34:37",
+        "productType": "existing",
+        "productCondition": "new",
+        "usageCount": "1",
+        "originalPrice": "12",
+        "productDescription": "11",
+        "suggestedPrice": "12",
+        "suggestionMessage": "12円",
+        "imagePath": "uploads\/suggestPriceimg_67a59b69896f86.71816171.jpg"
+    },
+    {
+        "date": "2025-02-07 14:39:32",
+        "productType": "既存商品",
+        "productCondition": "ほぼ新品",
+        "usageCount": "5",
+        "originalPrice": "10000",
+        "productDescription": "ズボンです",
+        "suggestedPrice": "7500",
+        "suggestionMessage": "7500円",
+        "imagePath": "uploads\/suggestPriceimg_67a59c90a93736.32765261.jpg"
+    },
+    {
+        "date": "2025-02-07 14:50:51",
+        "productType": "既存商品",
+        "productCondition": "ほぼ新品",
+        "usageCount": "3",
+        "originalPrice": "10000",
+        "productDescription": "割ときれいめなズボンです",
+        "suggestedPrice": "7000",
+        "imagePath": "uploads\/suggestPriceimg_67a59f36c22a18.25732604.jpg"
     }
 ]

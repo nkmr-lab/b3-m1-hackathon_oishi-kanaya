@@ -17,7 +17,7 @@ function encodeImageToBase64($imagePath) {
 // 価格提案を処理する関数
 function getPriceSuggestion($imagePath, $productType, $productCondition, $usageCount, $originalPrice, $productDescription, $openai_api_key) {
     $base64Image = encodeImageToBase64($imagePath);
-    echo "<img src='data:image/jpeg;base64,$base64Image' style='max-width:100%; height:auto;'>";
+    // echo "<img src='data:image/jpeg;base64,$base64Image' style='max-width:100%; height:auto;'>";
     $prompt = "
 以下の商品情報を基に、フリーマーケットで販売するにふさわしい適正価格を具体的な金額（円）で提案してください。商品の状況が「中古」の場合や使用回数が多い場合ははかなり値段を下げてください。回答は「XXXX円」の形式のみでお願いします。他の説明やテキストは不要です。
 - 商品タイプ: " . ($productType === 'existing' ? '既存の商品' : '手作り') . "
@@ -78,6 +78,7 @@ function getPriceSuggestion($imagePath, $productType, $productCondition, $usageC
         return ['error' => 'APIリクエストエラー: ' . $response];
     }
 
+
     if (isset($responseData['choices'][0]['message']['content'])) {
         $content = trim($responseData['choices'][0]['message']['content']);
         preg_match('/(\d{1,6})\s?円/', $content, $matches);
@@ -129,6 +130,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
             $error = '許可されていないファイル形式です。';
         }
     }
+    // 日本標準時を設定
+    date_default_timezone_set('Asia/Tokyo');
 
     if (!$error) {
         $result = getPriceSuggestion($imagePath, $productType, $productCondition, $usageCount, $originalPrice, $productDescription, $openai_api_key);
@@ -145,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                 'originalPrice' => $originalPrice,
                 'productDescription' => $productDescription,
                 'suggestedPrice' => $suggestedPrice,
-                'suggestionMessage' => $suggestionMessage,
+                // 'suggestionMessage' => $suggestionMessage,
                 'imagePath' => $imagePath,
             ];
 
@@ -163,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>適正価格設定 - フリマアプリ</title>
-    <link rel="stylesheet" href="css/sell.css">
+    <link rel="stylesheet" href="css/price_setting.css">
     <!-- Font Awesome（オプション） -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts（オプション） -->
@@ -196,16 +199,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                 <div class="form-group">
                     <label for="productType">商品タイプ:</label>
                     <select id="productType" name="productType" required>
-                        <option value="existing">既存の商品</option>
-                        <option value="handmade">手作り</option>
+                        <option value="既存商品">既存の商品</option>
+                        <option value="手作り">手作り</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="productCondition">商品の状態:</label>
                     <select id="productCondition" name="productCondition" required>
-                        <option value="new">新品</option>
-                        <option value="like_new">ほぼ新品</option>
-                        <option value="used">中古</option>
+                        <option value="新品">新品</option>
+                        <option value="ほぼ新品">ほぼ新品</option>
+                        <option value="中古">中古</option>
                     </select>
                 </div>
                 <div class="form-group">
