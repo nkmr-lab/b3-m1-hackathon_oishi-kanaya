@@ -19,7 +19,7 @@ function saveSearchResults($data) {
 }
 
 // 保存された履歴を取得する関数
-function getSearchImage() {
+function getSearchImages() {
     $filePath = __DIR__ . '/results_search.json';
 
     if (file_exists($filePath)) {

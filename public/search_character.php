@@ -1,4 +1,7 @@
 <?php
+// echo "upload_max_filesize: " . ini_get('upload_max_filesize') . "<br>";
+// echo "post_max_size: " . ini_get('post_max_size') . "<br>";
+
 require_once 'save_search.php';
 
 // エラーレポートを有効にする（開発時のみ）
@@ -10,9 +13,13 @@ error_reporting(E_ALL);
 $openai_api_key = getenv("API_Key");
 
 function encodeImageToBase64($imagePath) {
+    if (empty($imagePath) || !file_exists($imagePath)) {
+        return ''; // 空の文字列を返してエラーを防ぐ
+    }
     $imageData = file_get_contents($imagePath);
     return base64_encode($imageData);
 }
+
 
 // 画像検索を処理する関数
 function getSearchImage($imagePath, $label, $openai_api_key) {
@@ -145,26 +152,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
             $error = '許可されていないファイル形式です。';
         }
     }
+    // 日本標準時を設定
+    date_default_timezone_set('Asia/Tokyo');
 
     if (!$error) {
-        $result = getSearchImage($imagePath, $label, $openai_api_key);
-        if (isset($result['price'])) {
-            $searchResultsCharacter = $result['character'];
-            $searchResultsSourceName = $result['source'];
-            $guessPrice = $result['price'];
 
-            // 提案結果を保存
-            $searchResultsData = [
-                'date' => date('Y-m-d H:i:s'),
-                'searchResultsCharacter' => $searchResultsCharacter,
-                'searchResultsSourceName' => $searchResultsSourceName,
-                'guessPrice' => $guessPrice
-            ];
-
-            saveSearchResults($searchResultsData);
+        if (empty($imagePath) || !file_exists($imagePath)) {
+            $error = "画像のアップロードが正常に完了していません。";
         } else {
-            $error = $result['error'];
-        }
+            $result = getSearchImage($imagePath, $label, $openai_api_key);
+            if (isset($result['price'])) {
+                $searchResultsCharacter = $result['character'];
+                $searchResultsSourceName = $result['source'];
+                $guessPrice = $result['price'];
+    
+                // 提案結果を保存
+                $searchResultsData = [
+                    'date' => date('Y-m-d H:i:s'),
+                    'searchResultsCharacter' => $searchResultsCharacter,
+                    'searchResultsSourceName' => $searchResultsSourceName,
+                    'guessPrice' => $guessPrice,
+                    'imagePath' => $imagePath,
+                ];
+    
+                saveSearchResults($searchResultsData);
+            } else {
+                $error = $result['error'];
+            }
+        }    
     }
 }
 ?>
@@ -186,17 +201,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
         <h2>画像検索</h2>
 
         <?php if ($error): ?>
-            <div class="error"><?php //echo nl2br(htmlspecialchars($error)); ?></div>
+            <div class="error"><?php echo nl2br(htmlspecialchars($error)); ?></div>
         <?php endif; ?>
 
-        <?php if ($result): ?>
+        <?php if ($guessPrice): ?>
             <div class="price-suggestion">
                 <h3>キャラクター名: <?php echo htmlspecialchars($searchResultsCharacter); ?></h3>
                 <h3>出典名: <?php echo htmlspecialchars($searchResultsSourceName); ?></h3>
                 <h3>推定価格: <?php echo htmlspecialchars($guessPrice); ?> 円</h3>
                 <p><?php //echo nl2br(htmlspecialchars($message)); ?></p>
-                
-
+                <div class="link-container">
+                    <a href="saved_searchResults.php" class="history-link">検索履歴を見る</a>
+                    <a href="search_character.php" class="history-link">画像検索に戻る</a>
+                    <a href="start.html" class="back-btn">ホームに戻る</a>
+                </div>
             </div>
         <?php else: ?>
             <form action="search_character.php" method="post" enctype="multipart/form-data" class="price-form">
