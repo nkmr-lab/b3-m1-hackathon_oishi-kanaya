@@ -12,8 +12,15 @@ loadEnv(__DIR__ . "/api.env");
 // 環境変数を参照
 $openai_api_key = getenv("API_Key");
 
+function encodeImageToBase64($imagePath) {
+    $imageData = file_get_contents($imagePath);
+    return base64_encode($imageData);
+}
+
 // 価格提案を処理する関数
-function getPriceSuggestion($productType, $productCondition, $usageCount, $originalPrice, $productDescription, $openai_api_key) {
+function getPriceSuggestion($imagePath, $productType, $productCondition, $usageCount, $originalPrice, $productDescription, $openai_api_key) {
+    $base64Image = encodeImageToBase64($imagePath);
+    echo "<img src='data:image/jpeg;base64,$base64Image' style='max-width:100%; height:auto;'>";
     $prompt = "
 以下の商品情報を基に、フリーマーケットで販売するにふさわしい適正価格を具体的な金額（円）で提案してください。商品の状況が「中古」の場合や使用回数が多い場合ははかなり値段を下げてください。回答は「XXXX円」の形式のみでお願いします。他の説明やテキストは不要です。
 - 商品タイプ: " . ($productType === 'existing' ? '既存の商品' : '手作り') . "
@@ -24,13 +31,30 @@ function getPriceSuggestion($productType, $productCondition, $usageCount, $origi
 ";
 
     $data = [
-        'model' => 'gpt-4', // 必要に応じて 'gpt-3.5-turbo' に変更
+        'model' => 'gpt-4o',
         'messages' => [
-            ['role' => 'system', 'content' => 'あなたは優秀な販売価格アドバイザーです。以下の指示に従ってください。'],
-            ['role' => 'user', 'content' => $prompt],
+            [
+                "role" => "system",
+                "content" => "あなたは優秀な販売価格アドバイザーです。以下の指示に従ってください。"
+            ],
+            [
+                "role" => "user",
+                "content" => [
+                    [
+                        "type" => "text",
+                        "text" => $prompt
+                    ],
+                    [
+                        "type" => "image_url",
+                        "image_url" => [
+                            "url" => "data:image/jpeg;base64,$base64Image"
+                        ]
+                    ],
+                ],
+            ]
         ],
-        'max_tokens' => 50,
-        'temperature' => 0.5,
+        "max_tokens" => 1000,
+        'temperature' => 1.0,
     ];
 
     $ch = curl_init('https://api.openai.com/v1/chat/completions');
@@ -110,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     }
 
     if (!$error) {
-        $result = getPriceSuggestion($productType, $productCondition, $usageCount, $originalPrice, $productDescription, $openai_api_key);
+        $result = getPriceSuggestion($imagePath, $productType, $productCondition, $usageCount, $originalPrice, $productDescription, $openai_api_key);
         if (isset($result['price'])) {
             $suggestedPrice = $result['price'];
             $suggestionMessage = $result['message'];
