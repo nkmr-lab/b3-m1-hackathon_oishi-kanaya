@@ -1,160 +1,147 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fffaf0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ffe8e8, #e4ecfa);
     margin: 0;
     padding: 0;
 }
-
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 100vh;
+    min-height: 80%;
     padding: 20px;
     box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 700px; /* 画面の90%を使う */
+    margin: 50px auto;
 }
-
 h2 {
-    color: #333;
-    margin-bottom: 40px;
+    font-size: 32px;
+    color: #FF6F61;
+    margin-bottom: 20px;
     text-align: center;
 }
-
-.sell-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 300px;
-}
-
-button,
-.btn {
-    display: block;
-    width: 100%;
-    max-width: 300px;
+.error {
+    background-color: #FFCCCC;
     padding: 15px;
-    background-color: #1E90FF;
-    color: white;
+    border-left: 5px solid #FF4C4C;
+    color: #A94442;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.price-suggestion {
+    background: linear-gradient(135deg, #D0F0FD, #A5E1E8);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 150, 255, 0.15);
+    color: #004D61;
     text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
-
-.history-link,
-.back-btn {
-    display: block; /* リンクをブロック要素にして縦並びに */
-    text-align: center; /* リンクのテキストを中央揃えに */
-    margin: 10px 0; /* 上下の間隔を設定 */
-    padding: 10px 20px; /* リンク内の余白を設定 */
-    background-color: #f0f0f0; /* 背景色 */
-    color: #333; /* 文字色 */
-    text-decoration: none; /* 下線を削除 */
-    border: 1px solid #ccc; /* ボーダーを追加 */
-    border-radius: 5px; /* 角を丸くする */
-    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
-}
-
-.history-link:hover,
-.back-btn:hover {
-    background-color: #e0e0e0; /* ホバー時の背景色 */
-    color: #000; /* ホバー時の文字色 */
-}
-
 .price-form {
     display: flex;
-    flex-direction: column; /* 縦に並べる */
-    gap: 15px; /* 各項目間の余白 */
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
 }
-
-label {
-    width: 150px; /* ラベルの固定幅を設定 */
-    font-weight: bold;
-    text-align: right; /* ラベルを右揃え */
-    margin-right: 10px; /* ラベルと入力欄の間隔 */
-    display: inline-block; /* ラベルをブロック要素のように扱う */
+.sell-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ボタンを中央に配置 */
+    width: 80%;
+    /* gap: 15px; */
 }
-
-.form-group {
-    display: flex; /* ラベルと入力フィールドを横並びに */
-    align-items: center; /* ラベルと入力フィールドを上下中央揃え */
-    margin-bottom: 15px; /* 各項目間の余白を設定 */
-}
-
-input, select, textarea {
-    flex: 1; /* 入力欄をラベルの幅に応じて伸縮させる */
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-textarea {
-    resize: vertical; /* テキストエリアを縦方向のみリサイズ可能にする */
-}
-
-
-
-button {
-    display: block; /* ボタンをブロック要素として扱う */
-    margin: 0 auto; /* 左右のマージンを自動で設定し、中央に揃える */
-    padding: 10px 20px; /* ボタンの内側の余白 */
-    background-color: #1E90FF;
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    /* max-width: 100%;  */
+    padding: 18px;
+    background: linear-gradient(135deg, #FF8C42, #FF6B6B);
     color: white;
-    font-size: 16px;
+    font-size: 20px; 
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #FF6B6B, #FF3D3D);
+    box-shadow: 0px 4px 8px rgba(255, 107, 107, 0.5);
+    transform: translateY(-3px);
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 18px;
+    background: linear-gradient(135deg, #D0F0FD, #A5E1E8);
+    color: #004D61;
+    font-size: 20px;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-    background-color: #1C86EE;
+.back-btn:hover {
+    background: linear-gradient(135deg, #A5E1E8, #70C1E4);
+    box-shadow: 0px 4px 8px rgba(150, 200, 255, 0.5);
+    transform: translateY(-3px);
 }
 
-
-
-.error {
+label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+}
+/* button, .history-link, .back-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    background: linear-gradient(135deg, #FF8C42, #FF6B6B);
     color: white;
-    background-color: #FF6F6F;
-    border: 1px solid #FF4C4C;
-    border-radius: 5px;
-    padding: 10px;
     text-align: center;
-    margin-bottom: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px auto;
 }
-
-.price-suggestion {
-    text-align: center;
-    padding: 20px;
-    background-color: #e7f3fe;
-    border: 1px solid #b3d7ff;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-
-    h2 {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-
-    .price-form button,
-    .btn {
-        font-size: 14px;
-        padding: 10px;
-    }
-}
+button:hover, .history-link:hover, .back-btn:hover {
+    background: linear-gradient(135deg, #FF6B6B, #FF3D3D);
+    box-shadow: 0px 4px 8px rgba(255, 107, 107, 0.5);
+    transform: translateY(-3px);
+} */

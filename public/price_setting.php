@@ -186,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                 <p><?php echo nl2br(htmlspecialchars($suggestionMessage)); ?></p>
                 <div class="link-container">
                     <a href="saved_suggestionResults.php" class="history-link">保存履歴を見る</a>
-                    <a href="sell.html" class="back-btn">出品メニューに戻る</a>
+                    <a href="sell.html" class="back-btn">出品者支援メニューに戻る</a>
                 </div>  
 
             </div>
@@ -224,8 +224,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                     <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
                 </div>
                 <button type="submit" name="submit">価格を提案してもらう</button>
-                <a href="saved_suggestionResults.php" class="back-btn">保存履歴を見る</a>
-                <a href="sell.html" class="back-btn">出品メニューに戻る</a>
+                <a href="saved_suggestionResults.php" class="history-link">保存履歴を見る</a>
+                <a href="sell.html" class="back-btn">出品者支援メニューに戻る</a>
             </form>
 
         <?php endif; ?>
