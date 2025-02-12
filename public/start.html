@@ -3,20 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>フリマアプリ - メニュー</title>
+    <title>ナカノサブカルマーケット</title>
     <link rel="stylesheet" href="css/start.css">
     <!-- Font Awesome（オプション） -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts（オプション） -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
 </head>
 <body>
+    <header class="header">
+        ナカノサブカルマーケット
+        <nav class="nav-menu">
+            <a href="search_character.php">画像検索</a>
+            <a href="price_setting.php">価格提案</a>
+            <a href="company.html">フリマ情報</a>
+        </nav>
+    </header>
     <div class="container">
-        <h1>フリマアプリ</h1>
-        <div class="menu-buttons">
-            <a href="sell.html" class="btn"><i class="fas fa-shopping-cart"></i> 売る</a>
-            <a href="buy.html" class="btn"><i class="fas fa-shopping-bag"></i> 買う</a>
-            <a href="#" class="btn"><i class="fas fa-eye"></i> 見る</a>
+        <img src="images/home.jpg" alt="ホーム画像" class="image">
+        <div class="search_character">
+            <a href="sell.html" class="btn"><i class="fas fa-search"></i> 今すぐ検索</a>
+        </div>
+        <div class="suggest_price">
+            <h2>フリマで売りたいあなたへ</h2>
+            <div class="split-box">
+                <div class="box">何円で売ればいいかわからない方は、価格を提案してもらいましょう。</div>
+                <div class="box">いろんなフリーマーケット情報はコチラ！</div>
+            </div>
+            <div class="split-box">
+                <a href="price_setting.php" class="btn">価格提案</a>
+                <a href="#" class="btn">フリマ情報</a>
+            </div>
         </div>
     </div>
 </body>

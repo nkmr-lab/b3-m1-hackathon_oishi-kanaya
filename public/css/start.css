@@ -1,86 +1,163 @@
-/* css/start.css */
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    background-color: #f6f6f6;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    background-color: #e6e2dc; /* ヘッダーの背景色 */
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    margin-bottom: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+.nav-menu a {
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.nav-menu a:hover {
+    text-decoration: underline;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 320px;
+    padding: 15px;
 }
 
 h1 {
     color: #333;
-    margin-bottom: 40px;
     text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    width: 100%;
 }
 
-.menu-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.image {
     width: 100%;
     max-width: 300px;
+    height: auto;
+    margin: 10px 0;
 }
 
-.btn {
-    display: block;
+.search_character {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
-    padding: 15px;
-    background-color: #4CAF50;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search_character .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 150px;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #2c2c1e;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid #2c2c1e;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search_character .btn i {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.search_character .btn:hover {
+    background-color: #2c2c1e;
+    color: white;
+}
+
+.suggest_price {
+    background-color: #1a3d1a;
     color: white;
     text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #45a049;
-}
-
-/*イベント情報のCSS*/
-.event-info-box {
-    background-color: #ffebcd;
-    border: 3px solid #ff8c00;
     padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
-.event-heading {
-    font-size: 24px;
-    color: #ff4500;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-.event-info {
-    font-size: 18px;
-}
-.link-btn {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
-}
-.link-btn:hover {
-    text-decoration: underline;
-}
-/*イベント情報に関するCSSはここまで*/
 
-/* レスポンシブデザイン */
+.suggest_price h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.suggest_price p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.suggest_price .split-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.suggest_price .box {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.suggest_price .btn {
+    background-color: white;
+    color: #2c2c1e;
+    border: 2px solid white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    width: 130px;
+}
+
+.suggest_price .btn:hover {
+    background-color: #ddd;
+}
+
 @media (max-width: 600px) {
-    .btn {
+    h1 {
         font-size: 16px;
-        padding: 12px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 12px;
     }
 }
