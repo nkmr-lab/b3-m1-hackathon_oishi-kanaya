@@ -190,7 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>画像検索 - フリマアプリ</title>
-    <link rel="stylesheet" href="css/sell.css">
+    <link rel="stylesheet" href="css/search_character.css">
     <!-- Font Awesome（オプション） -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts（オプション） -->
@@ -226,15 +226,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                     <label for="label">種類:</label>
                     <select id="label" name="label" required>
                         <option value="character">キャラクター</option>
+                        <option value="vehicle">乗り物</option>
                     </select>
                 </div>
                 <button type="submit" name="submit">画像を検索する</button>
                 <div class="link-container">
                     <a href="saved_searchResults.php" class="history-link">検索履歴を見る</a>
-                    <a href="start.html" class="back-btn">ホームに戻る</a>
+                    <a href="buy.html" class="back-btn">購入者支援メニューに戻る</a>
                 </div>
             </form>
 
         <?php endif; ?>
+    </div>
 </body>
 </html>

@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .container {
     max-width: 700px;
     margin: 50px auto;
@@ -14,64 +13,11 @@ body {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
-
 h2 {
     font-size: 32px;
     color: #FF6F61;
     margin-bottom: 20px;
 }
-
-.error {
-    background-color: #FFCCCC;
-    padding: 15px;
-    border-left: 5px solid #FF4C4C;
-    color: #A94442;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-.price-suggestion {
-    background: linear-gradient(135deg, #D0F0FD, #A5E1E8);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 150, 255, 0.15);
-    color: #004D61;
-}
-
-.price-suggestion h3 {
-    font-size: 26px;
-    color: #007BFF;
-    margin-bottom: 10px;
-}
-
-.link-container {
-    margin-top: 15px;
-}
-
-.history-link, .back-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #FF8C42, #FF6B6B);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.history-link:hover, .back-btn:hover {
-    background: linear-gradient(135deg, #FF6B6B, #FF3D3D);
-    box-shadow: 0px 4px 8px rgba(255, 107, 107, 0.5);
-}
-
-form {
-    padding: 20px;
-    background-color: #FAF3F3;
-    border-radius: 12px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
 .form-group {
     display: flex;
     flex-direction: column; /* 縦並びにする */
@@ -82,13 +28,11 @@ form {
     border-radius: 10px;
     box-sizing: border-box; /* はみ出し防止 */
 }
-
 label {
     font-weight: bold;
     color: #333;
     margin-bottom: 5px;
 }
-
 input, select {
     width: 100%; /* はみ出しを防ぐ */
     max-width: 100%; /* コンテナ内で収まるように */
@@ -100,18 +44,6 @@ input, select {
     font-size: 16px;
     box-sizing: border-box; /* パディング込みの幅計算 */
 }
-
-textarea {
-    resize: none;
-}
-
-.link-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* ボタンの間隔を統一 */
-    margin-top: 15px;
-}
-
 button {
     width: 100%;
     padding: 15px;
@@ -123,29 +55,19 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
-
 button:hover {
     background: linear-gradient(135deg, #FF6B6B, #FF3D3D);
     transform: translateY(-3px);
     box-shadow: 0px 5px 10px rgba(255, 107, 107, 0.4);
 }
-
-a.back-btn {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
-    background: linear-gradient(135deg, #D0F0FD, #A5E1E8);
-    color: #004D61;
+.link-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
 }
-
-a.back-btn:hover {
-    background: linear-gradient(135deg, #A5E1E8, #70C1E4);
-    box-shadow: 0px 4px 8px rgba(150, 200, 255, 0.5);
-    transform: translateY(-3px);
-}
-
 .history-link, .back-btn {
     display: block;
     text-align: center;
@@ -154,13 +76,20 @@ a.back-btn:hover {
     font-weight: bold;
     transition: all 0.3s ease;
 }
-
 .history-link {
     background: linear-gradient(135deg, #A78BFA, #7B61FF);
     color: white;
 }
-
 .history-link:hover {
     background: linear-gradient(135deg, #7B61FF, #5B42F3);
     box-shadow: 0px 4px 8px rgba(123, 97, 255, 0.5);
+}
+.back-btn {
+    background: linear-gradient(135deg, #D0F0FD, #A5E1E8);
+    color: #004D61;
+}
+.back-btn:hover {
+    background: linear-gradient(135deg, #A5E1E8, #70C1E4);
+    box-shadow: 0px 4px 8px rgba(150, 200, 255, 0.5);
+    transform: translateY(-3px);
 }
