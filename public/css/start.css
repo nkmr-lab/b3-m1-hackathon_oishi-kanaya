@@ -148,7 +148,8 @@ h1 {
 }
 
 .suggest_price .btn:hover {
-    background-color: #ddd;
+    background-color: #2c2c1e;
+    color: white;
 }
 
 @media (max-width: 600px) {
