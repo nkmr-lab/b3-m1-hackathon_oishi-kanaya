@@ -24,7 +24,7 @@ function encodeImageToBase64($imagePath) {
 // 画像検索を処理する関数
 function getSearchImage($imagePath, $label, $openai_api_key) {
     $base64Image = encodeImageToBase64($imagePath);
-    echo "<img src='data:image/jpeg;base64,$base64Image' style='max-width:100%; height:auto;'>";
+    // echo "<img src='data:image/jpeg;base64,$base64Image' style='max-width:100%; height:auto;'>";
     if ($label == "character") {
         $prompt = "
 以下の画像に写っているキャラクターについて特定してください。
@@ -89,7 +89,7 @@ function getSearchImage($imagePath, $label, $openai_api_key) {
 
     if (isset($responseData['choices'][0]['message']['content'])) {
         $content = trim($responseData['choices'][0]['message']['content']);
-        echo $content;
+        // echo $content;
         preg_match('/キャラクター名[:：]?\s*([\p{L}0-9ぁ-んァ-ヶー・]+)\b/u', $content, $charMatches);
         $characterName = isset($charMatches[1]) ? trim($charMatches[1]) : '不明';
 
@@ -199,21 +199,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 <body>
     <div class="container">
         <h2>画像検索</h2>
-
-        <?php if ($error): ?>
-            <div class="error"><?php echo nl2br(htmlspecialchars($error)); ?></div>
-        <?php endif; ?>
-
         <?php if ($guessPrice): ?>
             <div class="price-suggestion">
+                <img src="<?php echo htmlspecialchars($imagePath); ?>" alt="検索画像">
                 <h3>キャラクター名: <?php echo htmlspecialchars($searchResultsCharacter); ?></h3>
                 <h3>出典名: <?php echo htmlspecialchars($searchResultsSourceName); ?></h3>
                 <h3>推定価格: <?php echo htmlspecialchars($guessPrice); ?> 円</h3>
                 <p><?php //echo nl2br(htmlspecialchars($message)); ?></p>
                 <div class="link-container">
-                    <a href="saved_searchResults.php" class="history-link">検索履歴を見る</a>
                     <a href="search_character.php" class="history-link">画像検索に戻る</a>
-                    <a href="start.html" class="back-btn">ホームに戻る</a>
+                    <a href="start.html" class="back-btn">ホームへ戻る</a>
                 </div>
             </div>
         <?php else: ?>
@@ -232,7 +227,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                 <button type="submit" name="submit">画像を検索する</button>
                 <div class="link-container">
                     <a href="saved_searchResults.php" class="history-link">検索履歴を見る</a>
-                    <a href="buy.html" class="back-btn">購入者支援メニューに戻る</a>
+                    <a href="start.html" class="back-btn">ホームへ戻る</a>
                 </div>
             </form>
 

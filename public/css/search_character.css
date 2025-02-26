@@ -18,6 +18,15 @@ h2 {
     color: #FF6F61;
     margin-bottom: 20px;
 }
+img {
+    display: block;
+    margin: 15px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+}
 .form-group {
     display: flex;
     flex-direction: column; /* 縦並びにする */
@@ -73,6 +82,7 @@ button:hover {
     text-align: center;
     padding: 12px;
     border-radius: 8px;
+    text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
 }
