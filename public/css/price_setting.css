@@ -20,7 +20,15 @@ h2 {
     color: #FF6F61;
     margin-bottom: 20px;
 }
-
+img {
+    display: block;
+    margin: 15px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+}
 .error {
     background-color: #FFCCCC;
     padding: 15px;
@@ -32,11 +40,9 @@ h2 {
 }
 
 .price-suggestion {
-    background: linear-gradient(135deg, #D0F0FD, #A5E1E8);
+    background-color: white;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 150, 255, 0.15);
-    color: #004D61;
 }
 
 .price-suggestion h3 {
@@ -115,6 +121,7 @@ textarea {
 button {
     width: 100%;
     padding: 15px;
+    margin-bottom: 10px;
     background: linear-gradient(135deg, #FF8C42, #FF6B6B);
     color: white;
     border: none;

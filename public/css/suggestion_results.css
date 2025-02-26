@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fffaf0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ffe8e8, #e4ecfa);
     margin: 0;
     padding: 0;
 }
@@ -8,16 +8,16 @@ body {
 .container {
     max-width: 800px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 30px;
     background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 h2 {
-    color: #333;
-    font-size: 28px; /* 見出しのフォントサイズを大きく */
+    color: #FF6F61;
+    font-size: 28px;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -32,7 +32,7 @@ ul {
 li {
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #FAF3F3;
     border: 2px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -40,12 +40,12 @@ li {
 }
 
 li:hover {
-    transform: scale(1.02); /* ホバー時に少し拡大 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 li strong {
-    font-size: 18px; /* 太字テキストのフォントサイズを大きく */
+    font-size: 18px;
     color: #333;
     margin-bottom: 10px;
     display: block;
@@ -53,8 +53,8 @@ li strong {
 
 li p {
     margin: 5px 0;
-    line-height: 1.6; /* 行間を少し広げる */
-    font-size: 16px; /* 一般テキストのフォントサイズを大きく */
+    line-height: 1.6;
+    font-size: 16px;
 }
 
 /* 画像スタイル */
@@ -74,17 +74,19 @@ li img {
     text-align: center;
     margin: 20px auto;
     padding: 15px 25px;
-    background-color: #1E90FF;
+    background: linear-gradient(135deg, #A78BFA, #7B61FF);
     color: white;
-    font-size: 18px; /* ボタンの文字を少し大きく */
+    font-size: 18px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 12px;
+    transition: all 0.3s ease;
     width: 200px;
 }
 
 .back-btn:hover {
-    background-color: #1C86EE;
+    background: linear-gradient(135deg, #7B61FF, #5B42F3);
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 10px rgba(123, 97, 255, 0.5);
 }
 
 /* メディアクエリ */

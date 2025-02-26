@@ -182,11 +182,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 
         <?php if ($suggestedPrice): ?>
             <div class="price-suggestion">
+            <img src="<?php echo htmlspecialchars($imagePath); ?>" alt="検索画像">
                 <h3>推奨販売価格: <?php echo htmlspecialchars($suggestedPrice); ?> 円</h3>
-                <p><?php echo nl2br(htmlspecialchars($suggestionMessage)); ?></p>
                 <div class="link-container">
                     <a href="saved_suggestionResults.php" class="history-link">保存履歴を見る</a>
-                    <a href="sell.html" class="back-btn">出品者支援メニューに戻る</a>
+                    <a href="start.html" class="back-btn">ホームへ戻る</a>
                 </div>  
 
             </div>
@@ -225,7 +225,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                 </div>
                 <button type="submit" name="submit">価格を提案してもらう</button>
                 <a href="saved_suggestionResults.php" class="history-link">保存履歴を見る</a>
-                <a href="sell.html" class="back-btn">出品者支援メニューに戻る</a>
+                <a href="start.html" class="back-btn">ホームへ戻る</a>
             </form>
 
         <?php endif; ?>

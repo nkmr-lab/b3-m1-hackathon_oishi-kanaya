@@ -14,32 +14,37 @@
     <header class="header">
         ナカノオタサーチ
         <nav class="nav-menu">
-            <a href="search_character.php">画像検索</a>
-            <a href="price_setting.php">価格提案</a>
-            <a href="https://www.nakano-centralpark.jp/event_post/6482.html">フリマ情報</a>
+            <a href="#search">画像検索</a>
+            <a href="#price">価格提案</a>
+            <a href="#market">フリマ情報</a>
         </nav>
     </header>
     <div class="container">
         <img src="images/home.jpg" alt="ホーム画像" class="image">
-        <div class="search_character">
-            <h3>画像で検索！</h3>
-            <p>
-                フリーマーケットで気になるキャラクターグッズを見つけたけれど、「このキャラクター、何の作品のものだろう？」と悩んだことはありませんか？<br>
-                そんな時に便利なのが、<b>ナカノオタサーチ</b>です！
-                
-                このシステムでは、スマートフォンで撮影した画像をアップロードするだけで、AIがキャラクターを自動認識し、作品名や関連情報を表示します。
-                キャラクターの名前がわかれば、相場を調べたり、グッズの価値をより深く理解したりするのに役立ちます。
-                
-                「サブカル×フリマ」の魅力を最大限に楽しめるよう、ぜひこのシステムを活用してみてください！</p>
-            <a href="sell.html" class="btn"><i class="fas fa-search"></i> 今すぐ検索</a>
-        </div>
+        <section id="search">
+            <div class="search_character">
+                <h3>画像で検索！</h3>
+                <p>
+                    フリーマーケットで気になるキャラクターグッズを見つけたけれど、「このキャラクター、何の作品のものだろう？」と悩んだことはありませんか？<br>
+                    そんな時に便利なのが、<b>ナカノオタサーチ</b>です！
+                    
+                    このシステムでは、スマートフォンで撮影した画像をアップロードするだけで、AIがキャラクターを自動認識し、作品名や関連情報を表示します。
+                    キャラクターの名前がわかれば、相場を調べたり、グッズの価値をより深く理解したりするのに役立ちます。
+                    
+                    「サブカル×フリマ」の魅力を最大限に楽しめるよう、ぜひこのシステムを活用してみてください！</p>
+                <a href="search_character.php" class="btn"><i class="fas fa-search"></i> 今すぐ検索</a>
+            </div>
+        </section>
         <div class="suggest_price">
-            <h2>フリマで売りたいあなたへ</h2>
+            <section id="price">
+                <h2>フリマで売りたいあなたへ</h2>
             <div class="box">何円で売ればいいかわからない方は、価格を提案してもらいましょう。</div>
             <a href="price_setting.php" class="btn">＄価格提案</a>
-            <div class="box">       <br>中野のフリーマーケット情報はコチラ！<br>次のフリマは3/22！</div>
-            <a href="https://www.nakano-centralpark.jp/event_post/6482.html" class="btn">🛒フリマ情報</a>
+            </section>
+            <section id="market">
+                <div class="box">       <br>中野のフリーマーケット情報はコチラ！<br>次のフリマは3/22！</div>
+                <a href="https://www.nakano-centralpark.jp/event_post/6482.html" class="btn">🛒フリマ情報</a>
+            </section>
         </div>
-    </div>
 </body>
 </html>
